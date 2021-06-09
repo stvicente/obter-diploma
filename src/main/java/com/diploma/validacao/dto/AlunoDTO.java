@@ -1,13 +1,13 @@
 package com.diploma.validacao.dto;
 
 import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.util.List;
 
+//@Valid
 public class AlunoDTO {
-
+    @Valid
     @Size(min = 8, max = 50, message="Nome deve ter entre 8 e 50 caracteres")
     @Pattern(regexp = "^[A-Za-z ]*$", message = "O nome deve possuir apenas letras")
     private String nome;
@@ -16,11 +16,6 @@ public class AlunoDTO {
     private List<DisciplinaDTO> disciplinas;
 
     public AlunoDTO(){}
-
-    public AlunoDTO(String nome, List<DisciplinaDTO> disciplinas) {
-        this.nome = nome;
-        this.disciplinas = disciplinas;
-    }
 
     public String getNome() {
         return nome;
